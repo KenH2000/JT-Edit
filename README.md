@@ -16,7 +16,7 @@ CoolLED1248<br>
 Versions 2.x of the Android app can import and export JT files.  If you have problems importing or with other functions, try version 2.1.4.
 
 CoolLEDX Driver<br>
-If you want to send commands to a panel with a PC or SBC, you can try the coolledx python driver.  This is a work-in-progress so some capabilities may improve as the project matures.
+If you want to send commands to a panel with a PC or SBC, you can try the coolledx python driver.  The driver now supports JT files.
 
 To install the CoolLEDX driver on your system:<br>
 1.  clone the repository to your PC.<br>
@@ -65,16 +65,18 @@ To install the CoolLEDX driver on your system:<br>
         python3 utils/tweak_sign.py x
     <pre>
     --response---
-    usage: tweak_sign.py 
-    [-h] [-a [ADDRESS]] [-t TEXT] [-s SPEED] [-b BRIGHTNESS] [-c COLOR] [-C BACKGROUND_COLOR]
-    [-j START_COLOR_MARKER] [-k END_COLOR_MARKER] [-f FONT] [-H FONT_HEIGHT] [-l LOG]
-    [-o ONOFF] [-m MODE] [-i IMAGE] [-n ANIMATION] [-N ANIMATION_SPEED] [-w WIDTH_TREATMENT]
-    [-g HEIGHT_TREATMENT] [-z HORIZONTAL_ALIGNMENT] [-y VERTICAL_ALIGNMENT]
-    tweak_sign.py: error: unrecognized arguments: x
+    usage: tweak_sign.py [-h] [-a [ADDRESS]] [-t TEXT] [-s SPEED] [-b BRIGHTNESS] [-c COLOR]
+                     [-C BACKGROUND_COLOR] [-j START_COLOR_MARKER] [-k END_COLOR_MARKER] [-f FONT]
+                     [-H FONT_HEIGHT] [-l LOG] [-o ONOFF] [-m MODE] [-i IMAGE] [-n ANIMATION]
+                     [-N ANIMATION_SPEED] [-w WIDTH_TREATMENT] [-g HEIGHT_TREATMENT]
+                     [-z HORIZONTAL_ALIGNMENT] [-y VERTICAL_ALIGNMENT] [-jt JTFILE]
+    tweak_sign.py: error: unrecognized arguments: xxx
     </pre>
 
 <b>To send an image to the panel:</b>
 
         python3 utils/tweak_sign.py -a YOUR:MAC:FROM:SCAN:PY -i yourimage.png
     
+<b>To send a JT file to the panel:</b>
 
+        python3 utils/tweak_sign.py -a YOUR:MAC:FROM:SCAN:PY -jt myjtfile.jt
